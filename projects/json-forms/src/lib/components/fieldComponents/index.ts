@@ -137,8 +137,8 @@ class ButtonComponent extends FieldComponentBase {}
 @Component({
   standalone: true,
   template: `
-    <div>
-      <h2 *ngIf="data?.label">{{ data.label }}</h2>
+    <div class="groupWrapper">
+      <h2 *ngIf="data?.label" class="groupLabel">{{ data.label }}</h2>
       <div
         class="group grid-container"
         [ngClass]="getLayoutClass(data.layout?.width)"

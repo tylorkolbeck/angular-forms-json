@@ -16,6 +16,7 @@ label {
 
 h2, h3 {
   font-family: var(--font-family);
+
 }
 
 input, select, textarea {
@@ -27,6 +28,15 @@ input, select, textarea {
   box-sizing: border-box;
   width: 100%;
 }
+
+.groupLabel {
+  margin-top: 0px;
+}
+
+.groupWrapper {
+  margin-bottom: 1rem;
+}
+
 
 button {
   border: none;

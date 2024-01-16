@@ -11,6 +11,7 @@ export class DynamicFormService {
 
   onSubmit: EventEmitter<any> = new EventEmitter();
   onChange: EventEmitter<any> = new EventEmitter();
+  onCancel: EventEmitter<boolean> = new EventEmitter();
 
   arrayClones: any = {};
 
@@ -38,6 +39,10 @@ export class DynamicFormService {
   }
 
   constructor(private fb: FormBuilder) {}
+
+  cancelHandler() {
+    this.onCancel.emit(true);
+  }
 
   submitHandler() {
     if (this.form?.invalid) {

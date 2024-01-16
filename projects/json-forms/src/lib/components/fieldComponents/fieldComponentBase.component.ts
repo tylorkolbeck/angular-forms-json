@@ -22,6 +22,7 @@ export class FieldComponentBase {
     deleteArrayItem: () => this.deleteArrayItem(this.arrayIndex, this.formArrayRef),
     addArrayItem: () => this.addArrayItem(this.arrayIndex, this.formArrayRef),
     submit: () => this.dynamicFormService.submitHandler(),
+    cancel: () => this.dynamicFormService.cancelHandler(),
   }
 
   mapButtonAction() {
