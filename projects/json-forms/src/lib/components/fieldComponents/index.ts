@@ -138,7 +138,7 @@ class ButtonComponent extends FieldComponentBase {}
   standalone: true,
   template: `
     <div>
-      <h2>{{ data.label }}</h2>
+      <h2 *ngIf="data?.label">{{ data.label }}</h2>
       <div
         class="group grid-container"
         [ngClass]="getLayoutClass(data.layout?.width)"
@@ -154,7 +154,7 @@ class ButtonComponent extends FieldComponentBase {}
       </div>
     </div>
   `,
-  imports: [ReactiveFormsModule, NgForOf, ComponentResolverComponent, NgClass],
+  imports: [ReactiveFormsModule, NgForOf, ComponentResolverComponent, NgClass, NgIf],
   styleUrls: ['form-styles.scss'],
 })
 export class GroupInputComponent extends FieldComponentBase {

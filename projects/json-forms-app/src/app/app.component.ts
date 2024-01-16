@@ -17,6 +17,10 @@ export class AppComponent implements OnInit {
   }
 
   submitHandler(value: any) {
-    console.log("BACK HERE: ", value);
+    console.log("Form Submitted: ", value);
+  }
+
+  changeHandler(value: any) {
+    console.log("Form Changed: ", value);
   }
 }

@@ -5,11 +5,13 @@ import { DynamicFormService } from './services/dynamicForm/dynamic-form.service'
 @Component({
   selector: 'json-forms',
   templateUrl: './json-forms.component.html',
-  styles: []
+  styles: [],
+  providers: [DynamicFormService],
 })
 export class JsonFormsComponent implements OnInit {
   @Input() formData: JSONForm | JSONControl | null = null;
   @Output() onSubmit: EventEmitter<any> = new EventEmitter();
+  @Output() onChange: EventEmitter<any> = new EventEmitter();
 
   get formGroup() {
     return this.dynamicFormService.form;
@@ -17,6 +19,7 @@ export class JsonFormsComponent implements OnInit {
 
   constructor(private dynamicFormService: DynamicFormService) {
     this.dynamicFormService.onSubmit.subscribe((value) => {
+      debugger
       this.onSubmit.emit(value);
     });
   }
@@ -27,5 +30,8 @@ export class JsonFormsComponent implements OnInit {
     }
 
     this.dynamicFormService.formData = this.formData as JSONForm;
+    this.dynamicFormService.onChange.subscribe((value) => {
+      this.onChange.emit(value);
+    });
   }
 }

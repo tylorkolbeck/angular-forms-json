@@ -11,8 +11,6 @@ export class FieldComponentBase {
   @Input() data: any;
   @Input() formGroup: any;
 
-  // formArray: any = null;
-
   arrayReferenceForClone: any = null;
 
   @Input() arrayIndex: number | null = null;

@@ -10,6 +10,7 @@ export class DynamicFormService {
   private _formData: JSONForm | null = null;
 
   onSubmit: EventEmitter<any> = new EventEmitter();
+  onChange: EventEmitter<any> = new EventEmitter();
 
   arrayClones: any = {};
 
@@ -30,6 +31,9 @@ export class DynamicFormService {
 
     if (formData) {
       this.form = this.createFormGroupFromSchema(formData);
+      this.form.valueChanges.subscribe((value) => {
+        this.onChange.emit(value);
+      });
     }
   }
 
