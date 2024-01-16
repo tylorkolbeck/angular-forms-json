@@ -5,6 +5,10 @@
     "@angular/common": "^16.2.0",
     "@angular/core": "^16.2.0"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tylorkolbeck/angular-forms-json.git"
+  },
   "dependencies": {
     "tslib": "^2.3.0"
   },
