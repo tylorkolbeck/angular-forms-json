@@ -1,0 +1,118 @@
+:host {
+  --font-family: 'Roboto', sans-serif;
+  --input-border-style:  1px solid #969696;
+  --input-border-radius: 2px;
+
+  --color-error: rgb(214, 24, 24);
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  margin: .5rem;
+  font-family: var(--font-family);
+  margin-left: 0;
+}
+
+h2, h3 {
+  font-family: var(--font-family);
+}
+
+input, select, textarea {
+  border: var(--input-border-style);
+  padding: 1rem;
+  border-radius: var(--input-border-radius);
+  font-family: var(--font-family);
+  max-width: 100%;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+button {
+  border: none;
+  background: dodgerblue;
+  color: white;
+  padding: 1rem;
+  border-radius: 4px;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.input-error {
+  border: 1px solid var(--color-error);
+}
+
+.form-error {
+  color: var(--color-error);
+  margin-top: .25rem;
+
+  & span {
+    font-family: var(--font-family);
+  }
+}
+
+.btn-remove, .btn-danger {
+  background: var(--color-error);
+  margin-top: 1rem;
+
+  &:hover {
+    background: var(--color-error);
+  }
+}
+
+.btn-primary {
+  background: dodgerblue;
+  margin-top: 1rem;
+
+  &:hover {
+    background: rgba(30, 144, 255, 0.8);
+  }
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr); /* 12-column grid */
+  grid-template-rows: auto;
+  gap: 16px; /* Space between grid items */
+  position: relative;
+}
+
+/* Full width column */
+.col-12 {
+  grid-column: span 12;
+  width:100%;
+}
+
+/* Half width column */
+.col-8 {
+  grid-column: span 8;
+  width:100%;
+
+}
+
+/* Half width column */
+.col-6 {
+  grid-column: span 6;
+  width:100%;
+
+}
+
+.col-5 {
+  grid-column: span 5;
+  width:100%;
+
+}
+
+/* One third width column */
+.col-4 {
+  grid-column: span 4;
+  width:100%;
+
+}
+
+/* Two thirds width column */
+.col-2 {
+  grid-column: span 2;
+  width:100%;
+
+}

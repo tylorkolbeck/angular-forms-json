@@ -1,0 +1,122 @@
+{
+  "controls": [
+    {
+      "type": "text",
+      "name": "username",
+      "label": "Username",
+      "placeholder": "Enter username",
+      "validations": [
+        {
+          "name": "required",
+          "message": "Username is required"
+        }
+      ]
+    },
+    {
+      "type": "password",
+      "name": "password",
+      "label": "Password",
+      "placeholder": "Enter password",
+      "validations": [
+        {
+          "name": "required",
+          "message": "Password is required"
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "name": "address",
+      "label": "Address Details",
+      "controls": [
+        {
+          "type": "text",
+          "name": "street",
+          "label": "Street",
+          "placeholder": "Enter street name"
+        },
+        {
+          "type": "text",
+          "name": "city",
+          "label": "City",
+          "placeholder": "Enter city"
+        },
+        {
+          "type": "text",
+          "name": "zip",
+          "label": "ZIP Code",
+          "placeholder": "Enter ZIP code"
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "gender",
+      "label": "Gender",
+      "options": [
+        {
+          "value": "male",
+          "label": "Male"
+        },
+        {
+          "value": "female",
+          "label": "Female"
+        }
+      ]
+    },
+    {
+      "type": "select",
+      "name": "country",
+      "label": "Country",
+      "options": [
+        {
+          "value": "us",
+          "label": "United States"
+        },
+        {
+          "value": "ca",
+          "label": "Canada"
+        },
+        {
+          "value": "uk",
+          "label": "United Kingdom"
+        }
+      ],
+      "validations": [
+        {
+          "name": "required",
+          "message": "Country selection is required"
+        }
+      ]
+    },
+    {
+      "type": "array",
+      "name": "contacts",
+      "label": "Contacts",
+      "arrayField": {
+        "type": "group",
+        "name": "contactGroup",
+        "controls": [
+          {
+            "type": "text",
+            "name": "contactName",
+            "label": "Name",
+            "placeholder": "Enter contact name",
+            "validations": [
+              {
+                "name": "required",
+                "message": "Name is required"
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "name": "contactPhone",
+            "label": "Phone",
+            "placeholder": "Enter contact phone"
+          }
+        ]
+      }
+    }
+  ]
+}

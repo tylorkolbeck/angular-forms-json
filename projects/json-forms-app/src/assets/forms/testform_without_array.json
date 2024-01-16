@@ -1,0 +1,158 @@
+{
+  "controls": [
+    {
+      "type": "group",
+      "name": "contactGroup",
+      "label": "Personal Information",
+      "controls": [
+        {
+          "type": "date",
+          "name": "dob",
+          "label": "Date of Birth",
+          "placeholder": "Enter date of birth",
+          "layout": {
+            "width": 6
+          }
+        },
+        {
+          "type": "text",
+          "name": "fullName",
+          "label": "Full Name",
+          "placeholder": "Enter username",
+          "layout": {
+            "width": 6
+          },
+          "validations": [
+            {
+              "name": "required",
+              "message": "Username is required"
+            }, {
+              "name": "minLength",
+              "value": "3",
+              "message": "Name must be atleast 3 characters long"
+            }
+          ]
+        },
+        {
+          "type": "password",
+          "name": "password",
+          "label": "Password",
+          "placeholder": "Enter password",
+          "layout": {
+            "width": 6
+          },
+          "validations": [
+            {
+              "name": "required",
+              "message": "Password is required"
+            }
+          ]
+        },
+        {
+          "type": "select",
+          "name": "gender",
+          "label": "Gender",
+          "layout": {
+            "width": 6
+          },
+          "options": [
+            {
+              "value": "",
+              "label": "Select"
+            },
+            {
+              "value": "male",
+              "label": "Male"
+            },
+            {
+              "value": "female",
+              "label": "Female"
+            }
+          ]
+        },
+        {
+          "type": "select",
+          "name": "country",
+          "label": "Country",
+          "layout": {
+            "width": 12
+          },
+          "options": [
+            {
+              "value": "",
+              "label": "Select"
+            },
+            {
+              "value": "us",
+              "label": "United States"
+            },
+            {
+              "value": "ca",
+              "label": "Canada"
+            },
+            {
+              "value": "uk",
+              "label": "United Kingdom"
+            }
+          ],
+          "validations": [
+            {
+              "name": "required",
+              "message": "Country selection is required"
+            }
+          ]
+        },
+        {
+          "type": "textarea",
+          "name": "about",
+          "label": "About",
+          "rows": "6",
+          "placeholder": "Enter about text"
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "name": "address",
+      "label": "Address Details",
+      "controls": [
+        {
+          "type": "text",
+          "name": "street",
+          "label": "Street",
+          "placeholder": "Enter street name",
+          "layout": {
+            "width": 4
+          }
+        },
+        {
+          "type": "text",
+          "name": "city",
+          "label": "City",
+          "placeholder": "Enter city",
+          "layout": {
+            "width": 4
+          }
+        },
+        {
+          "type": "text",
+          "name": "zip",
+          "label": "ZIP Code",
+          "placeholder": "Enter ZIP code",
+          "layout": {
+            "width": 4
+          }
+        }
+      ]
+    },
+    {
+      "type": "button",
+      "name": "submit",
+      "action": "submit",
+      "label": "Submit",
+      "layout": {
+        "class": "btn-submit btn-primary"
+      }
+    }
+  ]
+}

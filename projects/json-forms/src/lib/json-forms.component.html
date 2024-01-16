@@ -1,0 +1,11 @@
+<form *ngIf="formGroup && formData" [formGroup]="formGroup">
+  <ng-container *ngFor="let field of formData.controls">
+      <lib-component-resolver [controlType]="field.type" [data]="field" [formGroup]="formGroup"></lib-component-resolver>
+    </ng-container>
+</form>
+
+<!-- <form *ngIf="form && formData" [formGroup]="form">
+  <ng-container *ngFor="let field of formData.controls">
+      <lib-component-resolver [controlType]="field.type" [data]="field" [formGroup]="form"></lib-component-resolver>
+    </ng-container>
+</form> -->

@@ -1,0 +1,63 @@
+{
+  "controls": [
+    {
+      "type": "group",
+      "name": "contactGroup",
+      "label": "Personal Information",
+      "controls": [
+        {
+          "type": "text",
+          "name": "firstName",
+          "label": "First Name",
+          "placeholder": "Enter First",
+          "layout": {
+            "width": 6
+          }
+        },
+        {
+          "type": "text",
+          "name": "lastName",
+          "label": "Last Name",
+          "placeholder": "Enter Last",
+          "layout": {
+            "width": 6
+          }
+        },
+        {
+          "type": "group",
+          "name": "address",
+          "label": "Address",
+          "controls": [
+            {
+              "type": "text",
+              "name": "street",
+              "label": "Street",
+              "placeholder": "Enter Street",
+              "layout": {
+                "width": 5
+              }
+            },
+            {
+              "type": "text",
+              "name": "city",
+              "label": "City",
+              "placeholder": "Enter City",
+              "layout": {
+                "width": 5
+              }
+            },
+            {
+              "type": "text",
+              "name": "zip",
+              "label": "Zip",
+              "placeholder": "Enter Zip",
+              "layout": {
+                "width": 2
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
