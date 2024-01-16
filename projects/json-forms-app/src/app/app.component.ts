@@ -8,9 +8,7 @@ import { JSONForm } from 'json-forms';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-  formJson: JSONForm = {
-    controls: []
-  };
+  formJson: JSONForm | null = null;
 
   ngOnInit(): void {
     this.formJson = data as JSONForm;

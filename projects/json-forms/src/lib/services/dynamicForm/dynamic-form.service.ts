@@ -52,6 +52,17 @@ export class DynamicFormService {
     }
   }
 
+  findNestedValue(obj: any, path: string[]) {
+    let current = obj;
+    for (let i = 0; i < path.length; i++) {
+      if (current[path[i]] == null) {
+        return undefined;
+      }
+      current = current[path[i]];
+    }
+    return current;
+  }
+
   createFormGroupFromSchema(
     form: JSONForm | JSONControl,
     parentKey: string = ''
@@ -69,7 +80,7 @@ export class DynamicFormService {
         control.type !== ControlType.Button
       ) {
         formGroup[control.name] = [
-          '', // initial value
+          this.getControlValue(currentKey, this.formData?.values), // initial value
           control.validations ? this.getValidators(control.validations) : [], // validators
         ];
       } else if (control.type === ControlType.Group) {
@@ -92,6 +103,14 @@ export class DynamicFormService {
     });
 
     return this.fb.group(formGroup);
+  }
+
+  private getControlValue(keyPath: string, values: any) {
+    if (!values) {
+      return '';
+    }
+    const value = this.findNestedValue(values, keyPath.split('.'))
+    return value ? value : '';
   }
 
   private getValidators(validations: any[]): any[] {

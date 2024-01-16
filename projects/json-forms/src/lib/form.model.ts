@@ -17,6 +17,7 @@ export type JSONControl = ControlBase;
 
 export type JSONForm = {
   controls: JSONControl[];
+  values?: any;
 }
 
 export type ControlWithChildren = ControlBase & {
