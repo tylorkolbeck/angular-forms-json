@@ -117,14 +117,17 @@ export class DynamicFormService {
     const validatorsArray: any[] = [];
 
     validations?.forEach(val => {
-      switch (val.name) {
-        case 'required':
-          validatorsArray.push(Validators.required);
-          break;
-        case 'minLength':
-          validatorsArray.push(Validators.minLength(val.value));
-          break;
-        // add other validators as needed
+      if (val.fnc) {
+        validatorsArray.push(val.fnc);
+      } else {
+        switch (val.name) {
+          case 'required':
+            validatorsArray.push(Validators.required);
+            break;
+          case 'minLength':
+            validatorsArray.push(Validators.minLength(val.value));
+            break;
+        }
       }
     });
     return validatorsArray;

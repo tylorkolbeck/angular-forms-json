@@ -2,6 +2,7 @@ import {
   Component,
   HostBinding,
   Input,
+  OnInit,
   ViewChild,
   ViewContainerRef,
 } from '@angular/core';
@@ -21,7 +22,7 @@ import { ErrorDisplayComponent } from '../error-display/error-display.component'
   styleUrls: ['form-styles.scss'],
   imports: [ReactiveFormsModule, NgClass, ErrorDisplayComponent],
 })
-export class ComponentResolverComponent {
+export class ComponentResolverComponent implements OnInit {
   @ViewChild('container', { read: ViewContainerRef, static: true })
   container!: ViewContainerRef;
   @Input() controlType: any;

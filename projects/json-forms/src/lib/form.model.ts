@@ -60,6 +60,7 @@ export type ControlTextArea = ControlBase & {
 }
 
 type Validation = {
+  fnc: Function;
   name: string;
   message: string;
 }

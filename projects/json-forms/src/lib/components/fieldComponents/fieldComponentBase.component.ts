@@ -134,6 +134,4 @@ export class FieldComponentBase {
   getIsRequired() {
     return this.data.validations?.find((v: any) => v.name === 'required');
   }
-
-
 }

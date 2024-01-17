@@ -26,7 +26,8 @@
             {
               "name": "required",
               "message": "Username is required"
-            }, {
+            }, 
+            {
               "name": "minLength",
               "value": "3",
               "message": "Name must be atleast 3 characters long"
