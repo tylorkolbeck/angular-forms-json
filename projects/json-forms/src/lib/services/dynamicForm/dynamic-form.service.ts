@@ -79,10 +79,26 @@ export class DynamicFormService {
         control.type !== ControlType.Array &&
         control.type !== ControlType.Button
       ) {
+
+        const syncValidators = this.getControlValue(currentKey, this.formData?.syncValidators)
+        const asyncValidators = this.getControlValue(currentKey, this.formData?.asyncValidators)
+
         formGroup[control.name] = [
           this.getControlValue(currentKey, this.formData?.values), // initial value
           control.validations ? this.getValidators(control.validations) : [], // validators
+          [], // async validators
         ];
+
+
+        if (syncValidators) {
+          formGroup[control.name][1].push(...syncValidators.map((v:any) => v.validator));
+        }
+
+        
+        if (asyncValidators) {
+          formGroup[control.name][2].push(...asyncValidators.map((v:any) => v.validator));
+        }
+
       } else if (control.type === ControlType.Group) {
         formGroup[control.name] = this.createFormGroupFromSchema(
           control,
@@ -109,25 +125,23 @@ export class DynamicFormService {
     if (!values) {
       return '';
     }
-    const value = this.findNestedValue(values, keyPath.split('.'))
+    const value = this.findNestedValue(values, keyPath.split('.'));
     return value ? value : '';
   }
 
-  private getValidators(validations: any[]): any[] {
+  private getValidators(validations: any[], syncValidators?: any): any[] {
     const validatorsArray: any[] = [];
 
-    validations?.forEach(val => {
-      if (val.fnc) {
-        validatorsArray.push(val.fnc);
-      } else {
-        switch (val.name) {
-          case 'required':
-            validatorsArray.push(Validators.required);
-            break;
-          case 'minLength':
-            validatorsArray.push(Validators.minLength(val.value));
-            break;
-        }
+
+
+    validations?.forEach((val) => {
+      switch (val.name) {
+        case 'required':
+          validatorsArray.push(Validators.required);
+          break;
+        case 'minLength':
+          validatorsArray.push(Validators.minLength(val.value));
+          break;
       }
     });
     return validatorsArray;

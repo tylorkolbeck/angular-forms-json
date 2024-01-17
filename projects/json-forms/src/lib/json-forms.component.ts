@@ -1,7 +1,6 @@
 import { Component, Input, Output, OnInit, EventEmitter, OnChanges, SimpleChanges } from '@angular/core';
 import { JSONControl, JSONForm } from './form.model';
 import { DynamicFormService } from './services/dynamicForm/dynamic-form.service';
-import { AbstractControl } from '@angular/forms';
 
 @Component({
   selector: 'json-forms',

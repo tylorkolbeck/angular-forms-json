@@ -18,6 +18,8 @@ export type JSONControl = ControlBase;
 export type JSONForm = {
   controls: JSONControl[];
   values?: any;
+  syncValidators?: any;
+  asyncValidators?: any;
 }
 
 export type ControlWithChildren = ControlBase & {

@@ -15,12 +15,13 @@ export class ErrorDisplayComponent {
 
   constructor() {}
 
-  getValidationMessage(validation: unknown) {
-    if (typeof validation !== 'string') {
-      return '';
+  getValidationMessage(validation: any) {
+    if (typeof validation.value !== 'string') {
+      return this.validations.find(
+        (v: any) => v.name.toUpperCase() === validation.key.toUpperCase()
+      );
+    } else {
+      return { message: validation.value } // this was a passed in validation
     }
-    return this.validations.find(
-      (v: any) => v.name.toUpperCase() === validation.toUpperCase()
-    );
   }
 }
